@@ -1,33 +1,27 @@
+const colecao = ['Barbie', 'Moranguinho', 'Pequeno Poney', 'Chuquinhas', 'Fofolete'];
 
+function createListeners() {
+    let btnAdicionar = document.getElementById('adicionarcontato');
+    btnAdicionar.addEventListener('click', () => {
+        const meuform = document.getElementById('camponome');
+        console.log(meuform.value);
+        colecao.push(meuform.value);
+        showToys();
+    });
+}
 
-function addbrinquedos() {
+function showToys() {
 
+    const container = document.getElementById('container');
 
-    var mostra = document.getElementById('local');
-
-    var data = '';
-
-    colecao = ['Barbie', 'Moranguinho', 'Pequeno Poney', 'Chuquinhas', 'Fofolete']
+    let data = '';
 
     for (let i = 0; i < colecao.length; i++) {
-        data = data + '<div>' + this.colecao[i] + '</div>';
+        data = data + '<div>' + colecao[i] + '</div>';
     }
 
-    mostra.innerHTML = data;
-
-    var btnadicionar = document.querySelector('adicionarcontato');
-    btnadicionar = document.addEventListener('click', function (event) {
-        event.preventDefault();
-
-
-        var meuform = document.getElementById('camponome');
-        console.log(meuform.value)
-        colecao.push(meuform.value)
-
-        addbrinquedos();
-
-
-    });
-
+    container.innerHTML = data;
 }
-addbrinquedos();
+
+createListeners();
+showToys();
