@@ -5,3 +5,6 @@
     flex-flow: wrap;
     justify-content: flex-end;
 }
+.linhaedicao {
+    display: none;
+}

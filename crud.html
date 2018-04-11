@@ -11,16 +11,22 @@
     <section>
         <h2>Meus brinquedos</h2>
 
-        <div id="container"></div>
 
-        <table>
-            <tr>
-                <td><input id="camponome" name="brinquedo" type="text" placeholder="nome"/></td>
-                <td>
-                    <button type="button" id="adicionarcontato" class="botao bto-principal">Adicionar</button>
-                </td>
-            </tr>
-        </table>
+
+        <div>
+            <input id="camponome" name="brinquedo" type="text" placeholder="novo brinquedo"/>
+            <button type="button" id="adicionarcontato">Adicionar</button>
+        </div>
+
+        <div id="inputoculto" class="linhaedicao">
+            <form action="javascript:void(0);" method="POST" id="saveEdit">
+            <input id="edittoy" name="" type="text" placeholder=""/>
+            <button type="submit" id="editarcontato">Editar</button>
+            </form>
+        </div>
+        
+
+        <div id="container"></div>
     </section>
 
 </main>

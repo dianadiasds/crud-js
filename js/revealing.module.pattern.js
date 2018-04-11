@@ -1,6 +1,7 @@
 let revealingCrudModule = (function () {
 
     const btnExcludeId = "btnExclude";
+    const btnEditId = "btnEdit";
     const colecao = ['Barbie', 'Moranguinho', 'Pequeno Poney', 'Chuquinhas', 'Fofolete'];
 
     let btnAdicionarEvents = function () {
@@ -28,6 +29,38 @@ let revealingCrudModule = (function () {
                 btnExcluirEvents();
             })
         });
+
+    };
+    let btnEditEvents = function() {
+        let listBtnsEdit = document.getElementsByName("btnEdit");
+
+        listBtnsEdit.forEach(editButton => {
+
+            editButton.addEventListener('click', (event) => {
+                let btnIdEdit = event.target.id;
+                let resultedit = btnIdEdit.substring(btnEditId.length, btnIdEdit.length);
+                document.getElementById('edittoy').value = colecao[resultedit];
+
+                document.getElementById('inputoculto').style.display = 'block';
+
+                showToys();
+                btnExcluirEvents();
+            });
+
+        });
+
+
+        document.getElementById('saveEdit').onsubmit = function () {
+            let toyresult = document.getElementById('edittoy').value;
+            //quero acessar a posiçao do array conseguida no foreach acima, para substituir pelo valor editado
+            if (toyresult && toyresult.length > 0){
+                colecao.splice(resultedit, 1, toyresult)
+            }
+            showToys();
+            btnExcluirEvents();
+
+        };
+
     };
 
     let showToys = function () {
@@ -38,7 +71,7 @@ let revealingCrudModule = (function () {
 
         for (let i = 0; i < colecao.length; i++) {
             data = data + '<div>' + colecao[i] + '</div>';
-            data = data + '<div><button >Editar</button></div>';
+            data = data + '<div><button name="btnEdit" id=' + btnEditId + i + '>Editar</button></div>';
             data = data + '<div><button name="btnExclude" id=' + btnExcludeId + i + ' >Excluir</button></div>';
         }
 
@@ -50,6 +83,7 @@ let revealingCrudModule = (function () {
         showToys();
         btnAdicionarEvents();
         btnExcluirEvents();
+        btnEditEvents();
     };
 
     return {
