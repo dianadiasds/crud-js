@@ -1,10 +1,19 @@
 
 #container{
     display: flex;
-    width: 15%;
+    width: 300px;
     flex-flow: wrap;
     justify-content: flex-end;
 }
-.linhaedicao {
+.editBloc {
     display: none;
+}
+.listSize{
+    width: 50%;
+}
+.listAdd{
+    width: 300px;
+    text-align: right;
+    margin-bottom: 20px;
+
 }

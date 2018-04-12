@@ -12,19 +12,19 @@
         <h2>Meus brinquedos</h2>
 
 
+        <div class="listAdd">
+            <div>
+                <input id="inputAdd" type="text" placeholder="novo brinquedo"/>
+                <button type="button" id="addToy">Adicionar</button>
+            </div>
 
-        <div>
-            <input id="camponome" name="brinquedo" type="text" placeholder="novo brinquedo"/>
-            <button type="button" id="adicionarcontato">Adicionar</button>
+            <div id="inputHide" class="editBloc">
+                <input id="editToy" type="text" placeholder=""/>
+                <button type="button" id="confirmEdit">Editar</button>
+                <p id="positionP" hidden></p>
+            </div>
         </div>
 
-        <div id="inputoculto" class="linhaedicao">
-            <form action="javascript:void(0);" method="POST" id="saveEdit">
-            <input id="edittoy" name="" type="text" placeholder=""/>
-            <button type="submit" id="editarcontato">Editar</button>
-            </form>
-        </div>
-        
 
         <div id="container"></div>
     </section>
